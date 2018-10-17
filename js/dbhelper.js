@@ -11,8 +11,8 @@ class DBHelper {
             /***** Switch comments in code to run page on local servel OR on github *****/
             // navigator.serviceWorker.register('/sw.js', {
             //     scope: '/'
-            navigator.serviceWorker.register('/restaurant-reviews-app-stage-1/sw.js', {
-                scope: '/restaurant-reviews-app-stage-1/'
+            navigator.serviceWorker.register('/sw.js', {
+                scope: '/'
             }).then(function(reg) {
                 console.log("Service Worker Registered with scope: ", reg.scope);
             }).catch(function(err) {
@@ -27,10 +27,10 @@ class DBHelper {
      * Change this to restaurants.json file location on your server.
      */
     static get DATABASE_URL() {
-        const port = 8000 // Change this to your server port
+        const port = 42928 // Change this to your server port
         /***** Switch comments in code to run page on local servel OR on github *****/
         // return `http://localhost:${port}/data/restaurants.json`;
-        return `https://anastasiaevgenia.github.io/restaurant-reviews-app-stage-1/data/restaurants.json`;
+        return `https://github.com/HebaFahmi/restaurant-reviews-app-stage-1-HebaFahmi/blob/bd51d1905096f0e79f9ff3a9062dd12d963ed044/data/restaurants.json`;
     }
 
     /**
@@ -179,25 +179,27 @@ class DBHelper {
     /**
      * Map marker for a restaurant.
      */
+    //static mapMarkerForRestaurant(restaurant, map) {
+    //    // https://leafletjs.com/reference-1.3.0.html#marker  
+    //    const marker = new L.marker([restaurant.latlng.lat, restaurant.latlng.lng], {
+    //        title: restaurant.name,
+    //        alt: restaurant.name,
+    //        url: DBHelper.urlForRestaurant(restaurant)
+    //    })
+    //    marker.addTo(newMap);
+    //    return marker;
+    //}
+
     static mapMarkerForRestaurant(restaurant, map) {
-        // https://leafletjs.com/reference-1.3.0.html#marker  
-        const marker = new L.marker([restaurant.latlng.lat, restaurant.latlng.lng], {
+        const marker = new google.maps.Marker({
+            position: restaurant.latlng,
             title: restaurant.name,
-            alt: restaurant.name,
-            url: DBHelper.urlForRestaurant(restaurant)
-        })
-        marker.addTo(newMap);
+            url: DBHelper.urlForRestaurant(restaurant),
+            map: map,
+            animation: google.maps.Animation.DROP
+        }
+        );
         return marker;
     }
-    /* static mapMarkerForRestaurant(restaurant, map) {
-      const marker = new google.maps.Marker({
-        position: restaurant.latlng,
-        title: restaurant.name,
-        url: DBHelper.urlForRestaurant(restaurant),
-        map: map,
-        animation: google.maps.Animation.DROP}
-      );
-      return marker;
-    } */
 
 }

@@ -27,6 +27,16 @@ Address, cuisine, oppening hours, other user reviews and ratings.
     2. When you to enter on the restaurant details click "VIEWDETAILS" button under the image of the restaurant.
 	3. The "restaurant.html" page will open.
     4. When you want to back in the home page, click "Home" above of the restaurant image.
+ 
+ ## Demo
+ ## Home Page
+
+[![demo](./img/index.JPG)](https://github.com/HebaFahmi/restaurant-reviews-app-stage-1-HebaFahmi/img/index.JPG)
+
+ ## Restaurant Page
+
+[![demo](./img/rest.JPG)](https://github.com/HebaFahmi/restaurant-reviews-app-stage-1-HebaFahmi/img/rest.JPG)
+
     
 ## Note:
 files in order to be able to run project in local server.
@@ -44,13 +54,10 @@ in index.html, restaurant.html and dbhelper.js to run localy.
 
 ## Dependencies
 
-The starter code for this project is based on the Udacity repository
-(https://github.com/udacity/mws-restaurant-stage-1)
+The starter code for this project enter the link below
+(https://github.com/HebaFahmi/restaurant-reviews-app-stage-1-HebaFahmi.git)
 
 ### Leaflet.js and Mapbox:
 
 This repository uses [leafletjs](https://leafletjs.com/) with [Mapbox](https://www.mapbox.com/). Mapbox is free to use, and does not require any payment information. 
 
-## License
-
-This code is distributed under the MIT license.
