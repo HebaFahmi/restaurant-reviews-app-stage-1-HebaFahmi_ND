@@ -30,7 +30,7 @@ class DBHelper {
         const port = 42928 // Change this to your server port
         /***** Switch comments in code to run page on local servel OR on github *****/
         // return `http://localhost:${port}/data/restaurants.json`;
-        return `https://github.com/HebaFahmi/restaurant-reviews-app-stage-1-HebaFahmi_ND/blob/bd51d1905096f0e79f9ff3a9062dd12d963ed044/data/restaurants.json`;
+        return `https://github.com/HebaFahmi/restaurant-reviews-app-stage-1-HebaFahmi_ND/blob/master/data/restaurants.json`;
     }
 
     /**
