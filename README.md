@@ -31,12 +31,14 @@ Address, cuisine, oppening hours, other user reviews and ratings.
  ## Demo
  ## Home Page
 
-[![demo](./img/index.JPG)](https://github.com/HebaFahmi/restaurant-reviews-app-stage-1-HebaFahmi/img/index.JPG)
+[![demo](./img/index.JPG)](https://github.com/HebaFahmi/restaurant-reviews-app-stage-1-HebaFahmi_ND/img/index.JPG)
 
  ## Restaurant Page
 
-[![demo](./img/rest.JPG)](https://github.com/HebaFahmi/restaurant-reviews-app-stage-1-HebaFahmi/img/rest.JPG)
-
+[![demo](./img/rest1.JPG)](https://github.com/HebaFahmi/restaurant-reviews-app-stage-1-HebaFahmi_ND/img/rest1.JPG)
+[![demo](./img/rest2.JPG)](https://github.com/HebaFahmi/restaurant-reviews-app-stage-1-HebaFahmi_ND/img/rest2.JPG)
+[![demo](./img/rest3.JPG)](https://github.com/HebaFahmi/restaurant-reviews-app-stage-1-HebaFahmi_ND/img/rest3.JPG)
+[![demo](./img/rest4.JPG)](https://github.com/HebaFahmi/restaurant-reviews-app-stage-1-HebaFahmi_ND/img/rest4.JPG)
     
 ## Note:
 files in order to be able to run project in local server.
@@ -55,7 +57,7 @@ in index.html, restaurant.html and dbhelper.js to run localy.
 ## Dependencies
 
 The starter code for this project enter the link below
-(https://github.com/HebaFahmi/restaurant-reviews-app-stage-1-HebaFahmi.git)
+(https://github.com/HebaFahmi/restaurant-reviews-app-stage-1-HebaFahmi_ND.git)
 
 ### Leaflet.js and Mapbox:
 
