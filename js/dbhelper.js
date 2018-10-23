@@ -7,29 +7,23 @@ class DBHelper {
         //check if browser supports service workers, if not return.
         if (!navigator.serviceWorker) return;
         //Register service worker after DOM content has loaded
-        window.addEventListener('load', function() {
-            /***** Switch comments in code to run page on local servel OR on github *****/
-            // navigator.serviceWorker.register('/sw.js', {
-            //     scope: '/'
+        window.addEventListener('load', function () {
+            // Run page on local servel OR on github 
             navigator.serviceWorker.register('/sw.js', {
                 scope: '/'
-            }).then(function(reg) {
+            }).then(function (reg) {
                 console.log("Service Worker Registered with scope: ", reg.scope);
-            }).catch(function(err) {
+            }).catch(function (err) {
                 console.log("Error in Service Worker Registration: ", err);
             });
         });
     }
 
 
-    /**
-     * Database URL.
-     * Change this to restaurants.json file location on your server.
-     */
+    // Database URL.
     static get DATABASE_URL() {
-        const port = 42928 // Change this to your server port
-        /***** Switch comments in code to run page on local servel OR on github *****/
-        // return `http://localhost:${port}/data/restaurants.json`;
+        const port = 42928
+        //Run page on local servel OR on github
         return `https://github.com/HebaFahmi/restaurant-reviews-app-stage-1-HebaFahmi_ND/blob/master/data/restaurants.json`;
     }
 
@@ -40,11 +34,14 @@ class DBHelper {
         let xhr = new XMLHttpRequest();
         xhr.open('GET', DBHelper.DATABASE_URL);
         xhr.onload = () => {
-            if (xhr.status === 200) { // Got a success response from server!
+            // Got a success response from server!
+            if (xhr.status === 200) {
                 const json = JSON.parse(xhr.responseText);
                 const restaurants = json.restaurants;
                 callback(null, restaurants);
-            } else { // Oops!. Got an error from server.
+            }
+                // Oops!. Got an error from server.
+            else {
                 const error = (`Request failed. Returned status of ${xhr.status}`);
                 callback(error, null);
             }
@@ -62,9 +59,12 @@ class DBHelper {
                 callback(error, null);
             } else {
                 const restaurant = restaurants.find(r => r.id == id);
-                if (restaurant) { // Got the restaurant
+                // Got the restaurant
+                if (restaurant) {
                     callback(null, restaurant);
-                } else { // Restaurant does not exist in the database
+                }
+                    // Restaurant does not exist in the database
+                else {
                     callback('Restaurant does not exist', null);
                 }
             }
@@ -171,25 +171,13 @@ class DBHelper {
      * Restaurant image URL.
      */
     static imageUrlForRestaurant(restaurant) {
-        /***** Switch comments in code to run page on local servel OR on github *****/
-        // return (`/img/${restaurant.photograph}`);
+        // Run page on local servel OR on github 
         return (`./img/${restaurant.photograph}`);
     }
 
     /**
      * Map marker for a restaurant.
      */
-    //static mapMarkerForRestaurant(restaurant, map) {
-    //    // https://leafletjs.com/reference-1.3.0.html#marker  
-    //    const marker = new L.marker([restaurant.latlng.lat, restaurant.latlng.lng], {
-    //        title: restaurant.name,
-    //        alt: restaurant.name,
-    //        url: DBHelper.urlForRestaurant(restaurant)
-    //    })
-    //    marker.addTo(newMap);
-    //    return marker;
-    //}
-
     static mapMarkerForRestaurant(restaurant, map) {
         const marker = new google.maps.Marker({
             position: restaurant.latlng,
