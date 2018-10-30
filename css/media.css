@@ -4,14 +4,6 @@
 	}
 }
 
-
-@media screen and (min-width: 1000px) {
-	#restaurants-list {
-	    grid-template-columns: 1fr 1fr 1fr;
-	}
-}
-
-
 @media screen and (min-width: 1450px) {
 	#restaurants-list {
 	    grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -28,9 +20,7 @@
 }
 
 @media only screen and (max-width: 320px) {
-.container{
- margin-left: 45px;
-}
+
 #restaurants-list {
 	padding:0;	
 }
